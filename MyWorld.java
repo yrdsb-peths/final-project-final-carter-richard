@@ -6,6 +6,9 @@ public class MyWorld extends World {
         
         FlappyBoy flappy = new FlappyBoy();
         addObject(flappy, 300, 300);
+        
+        Pipe pipe = new Pipe();
+        addObject(pipe, 300, 300);
     
     }
 }
