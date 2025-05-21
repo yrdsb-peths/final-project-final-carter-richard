@@ -8,20 +8,26 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class FlappyBoy extends Actor
 {
-    /**
-     * Act - do whatever the FlappyBoy wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    private int velocity = 0;         // Vertical speed
+    private final int gravity = 1;    // Gravity pulls down
+    private final int flapStrength = -10; // Upward force on flap
+
     public void act()
     {
-        if(Greenfoot.isKeyDown("up"))
+        // Flap up when space is pressed
+        if (Greenfoot.isKeyDown("space"))
         {
-            move(-1);
+            velocity = flapStrength;
         }
-        else if(Greenfoot.isKeyDown("down"));
-        {
-            move(1);
-        }
+        velocity += gravity;
 
+        setLocation(getX(), getY() + velocity);
+        if (getY() > getWorld().getHeight() - 1)
+        {
+            setLocation(getX(), getWorld().getHeight() - 1);
+            velocity = 0;
+        }
     }
 }
+
+
