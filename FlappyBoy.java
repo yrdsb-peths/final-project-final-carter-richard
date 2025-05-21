@@ -14,6 +14,14 @@ public class FlappyBoy extends Actor
      */
     public void act()
     {
-        move(1);
+        if(Greenfoot.isKeyDown("up"))
+        {
+            move(-1);
+        }
+        else if(Greenfoot.isKeyDown("down"));
+        {
+            move(1);
+        }
+
     }
 }

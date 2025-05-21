@@ -1,4 +1,5 @@
 #Greenfoot project file
+<<<<<<< HEAD
 class.MyWorld.image=background.jpg
 dependency1.from=MyWorld
 dependency1.to=FlappyBoy
@@ -8,6 +9,17 @@ editor.fx.0.width=814
 editor.fx.0.x=615
 editor.fx.0.y=170
 height=751
+=======
+class.FlappyBoy.image=baby1.png
+dependency1.from=MyWorld
+dependency1.to=FlappyBoy
+dependency1.type=UsesDependency
+editor.fx.0.height=728
+editor.fx.0.width=800
+editor.fx.0.x=882
+editor.fx.0.y=122
+height=561
+>>>>>>> c27071b4ad1670845737deed9e416c37fdc36cf6
 package.numDependencies=1
 package.numTargets=2
 project.charset=UTF-8
@@ -39,7 +51,13 @@ target2.width=120
 target2.x=0
 target2.y=0
 version=3.1.0
+<<<<<<< HEAD
 width=1553
 world.lastInstantiated=MyWorld
 xPosition=30
 yPosition=73
+=======
+width=1387
+xPosition=162
+yPosition=81
+>>>>>>> c27071b4ad1670845737deed9e416c37fdc36cf6
