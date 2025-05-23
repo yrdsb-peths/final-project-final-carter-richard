@@ -14,29 +14,30 @@ public class FlappyBoy extends Actor
 
     public void act()
     {
-        // Flap when space is pressed
         if (Greenfoot.isKeyDown("space"))
         {
             velocity = flapStrength;
         }
 
-        // Apply gravity
         velocity += gravity;
         setLocation(getX(), getY() + velocity);
 
-        // Check if bird touches the floor
         if (getY() >= getWorld().getHeight() - 1)
         {
-            setLocation(getX(), getWorld().getHeight() - 1); // Stick to floor
+            setLocation(getX(), getWorld().getHeight() - 1);
+            gameOver();
+        }
+
+        if (isTouching(Pipe.class))
+        {
             gameOver();
         }
     }
 
     private void gameOver()
     {
-        // Display Game Over text
         getWorld().showText("Game Over", getWorld().getWidth() / 2, getWorld().getHeight() / 2);
-        Greenfoot.stop(); 
+        Greenfoot.stop();
     }
 }
 
