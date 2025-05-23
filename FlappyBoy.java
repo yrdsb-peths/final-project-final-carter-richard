@@ -8,26 +8,37 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class FlappyBoy extends Actor
 {
-    private int velocity = 0;         // Vertical speed
-    private final int gravity = 1;    // Gravity pulls down
-    private final int flapStrength = -10; // Upward force on flap
+    private int velocity = 0;
+    private final int gravity = 1;
+    private final int flapStrength = -10;
 
     public void act()
     {
-        // Flap up when space is pressed
+        // Flap when space is pressed
         if (Greenfoot.isKeyDown("space"))
         {
             velocity = flapStrength;
         }
-        velocity += gravity;
 
+        // Apply gravity
+        velocity += gravity;
         setLocation(getX(), getY() + velocity);
-        if (getY() > getWorld().getHeight() - 1)
+
+        // Check if bird touches the floor
+        if (getY() >= getWorld().getHeight() - 1)
         {
-            setLocation(getX(), getWorld().getHeight() - 1);
-            velocity = 0;
+            setLocation(getX(), getWorld().getHeight() - 1); // Stick to floor
+            gameOver();
         }
     }
+
+    private void gameOver()
+    {
+        // Display Game Over text
+        getWorld().showText("Game Over", getWorld().getWidth() / 2, getWorld().getHeight() / 2);
+        Greenfoot.stop(); 
+    }
 }
+
 
 
