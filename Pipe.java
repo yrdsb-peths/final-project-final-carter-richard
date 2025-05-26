@@ -10,6 +10,16 @@ public class Pipe extends Actor
 {
     int pipeSpeed = -4;
     private boolean passed = false;
+    
+    public Pipe(boolean isTop)
+    {
+        GreenfootImage image = getImage();
+       if(isTop) 
+       {
+           image.mirrorVertically();
+           setImage(image);
+       }
+    }
 
     public void act()
     {

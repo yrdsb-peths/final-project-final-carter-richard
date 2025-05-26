@@ -3,6 +3,7 @@ import greenfoot.*;
 public class MyWorld extends World {
     int counter = 0;
     private int score = 0;
+    private final int GAP = 150;
 
     public MyWorld() {
         super(850, 478, 1);
@@ -17,17 +18,24 @@ public class MyWorld extends World {
     public void act() {
         counter++;
         if(counter == 100) {
-            Pipe pipes = new Pipe();
-
-            GreenfootImage image = pipes.getImage();
-            addObject(pipes,getWidth(), getHeight()/2 + image.getHeight());
-
-            addObject(pipes, getWidth(), getHeight()/2);
+            createPipePair();
 
             counter = 0;
         }
     }
-
+    private void createPipePair()
+    {
+        int pipeHeight = Greenfoot.getRandomNumber(150) + 100;
+        int pipeWidth = new Pipe(false).getImage().getWidth();
+        
+        Pipe bottomPipe = new Pipe(false);
+        addObject(bottomPipe, getWidth() + pipeWidth / 2, pipeHeight);
+        
+        Pipe topPipe = new Pipe(true);
+        int topY = pipeHeight - GAP - topPipe.getImage().getHeight();
+        addObject(topPipe, getWidth() + pipeWidth / 2, topY);
+        
+    }
     public void increaseScore() {
         score++;
         showScore();
