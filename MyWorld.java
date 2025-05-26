@@ -11,6 +11,7 @@ public class MyWorld extends World {
         addObject(flappy, 300, 300);
 
         addObject(flappy, 175, 300);
+        
 
     
     }
@@ -21,8 +22,8 @@ public class MyWorld extends World {
         if(counter == 100) 
         {
             Pipe pipes = new Pipe();
-            addObject(pipes, getWidth(), getHeight()/2);
-            System.out.println(counter);
+            GreenfootImage image = pipes.getImage();
+            addObject(pipes,getWidth(), getHeight()/2 + image.getHeight());
             counter = 0;
         }
     }
