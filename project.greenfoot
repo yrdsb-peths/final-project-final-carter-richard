@@ -10,11 +10,19 @@ dependency2.type=UsesDependency
 dependency3.from=FlappyBoy
 dependency3.to=Pipe
 dependency3.type=UsesDependency
+<<<<<<< HEAD
 editor.fx.0.height=615
 editor.fx.0.width=814
 editor.fx.0.x=776
 editor.fx.0.y=93
 height=663
+=======
+editor.fx.0.height=728
+editor.fx.0.width=800
+editor.fx.0.x=882
+editor.fx.0.y=122
+height=629
+>>>>>>> 9b83d1c521a4349f67bbb0d2afd0f59295029358
 package.numDependencies=3
 package.numTargets=3
 project.charset=UTF-8
