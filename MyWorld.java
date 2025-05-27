@@ -26,9 +26,10 @@ public class MyWorld extends World {
     private void createPipePair()
     {
         int pipeHeight = Greenfoot.getRandomNumber(150) + 300;
-        int pipeWidth = new Pipe(false).getImage().getWidth();
         
         Pipe bottomPipe = new Pipe(false);
+        int pipeWidth = bottomPipe.getImage().getWidth();
+        
         addObject(bottomPipe, getWidth() + pipeWidth / 2, pipeHeight);
         
         Pipe topPipe = new Pipe(true);
