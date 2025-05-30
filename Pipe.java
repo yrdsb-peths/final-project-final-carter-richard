@@ -10,18 +10,33 @@ public class Pipe extends Actor
 {
     int pipeSpeed = -4;
     private boolean passed = false;
+    
+    public Pipe(boolean isTop)
+    {
+        setImage("Pipe.jpg");
+       if(isTop) 
+       {
+           GreenfootImage image = getImage();
+           image.mirrorVertically();
+           setImage(image);
+       }
+    }
 
     public void act()
     {
         setLocation(getX() + pipeSpeed, getY());
-
-        FlappyBoy flappy = (FlappyBoy) getWorld().getObjects(FlappyBoy.class).get(0);
-        if (!passed && getX() + getImage().getWidth() / 2 < flappy.getX()) {
+        
+        FlappyBoy flappy = null;
+        if(getWorld() != null && !getWorld().getObjects(FlappyBoy.class).isEmpty())
+        {
+            flappy = (FlappyBoy) getWorld().getObjects(FlappyBoy.class).get(0);
+        }
+        if (flappy != null && !passed && getX() + getImage().getWidth() / 2 < flappy.getX()) {
             passed = true;
             ((MyWorld) getWorld()).increaseScore();
         }
 
-        if (getX() < -getImage().getWidth()) {
+        if (getX() < -100) {
             getWorld().removeObject(this);
         }
     }
