@@ -10,7 +10,7 @@ public class MyWorld extends World {
         FlappyBoy flappy = new FlappyBoy();
         addObject(flappy, 175, 300);
 
-        showScore(); // Show initial score
+        showScore(); 
     }
 
     public void act() {
