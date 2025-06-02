@@ -36,7 +36,7 @@ public class Pipe extends Actor
             ((MyWorld) getWorld()).increaseScore();
         }
 
-        if (getX() < -100) {
+        if (getX() == 0) {
             getWorld().removeObject(this);
         }
     }
